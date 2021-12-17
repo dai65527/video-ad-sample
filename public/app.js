@@ -113,7 +113,6 @@ function initializeIMA() {
     false
   );
 
-  // Let the AdsLoader know when the video has ended
   videoElement.addEventListener("ended", function () {
     adsLoader.contentComplete();
   });

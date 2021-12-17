@@ -16,16 +16,14 @@ type AdServer struct{}
 
 var _ http.Handler = (*AdServer)(nil)
 
-// TrkBaseURL is the base URL of tracking server
 const TrkBaseURL = "http://localhost:8080"
 const CreativeBaseURL = "http://localhost:8080"
 
-// ServerHTTP is the interface for the HTTP server
+// ServerHTTP HTTPハンドラ
 func (s *AdServer) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	// cors対応
 	w.Header().Set("Access-Control-Allow-Origin", "http://imasdk.googleapis.com")
 	w.Header().Set("Access-Control-Allow-Credentials", "true")
-	w.Header().Set("Access-Control-Allow-Private-Network", "*")
 
 	// userIDの取得
 	userID := r.URL.Query().Get("userID")

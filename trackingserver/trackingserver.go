@@ -9,7 +9,7 @@ type TrackingServer struct{}
 
 var _ http.Handler = (*TrackingServer)(nil)
 
-// ServeHTTP 広告視聴ログを記録
+// ServerHTTP HTTPハンドラ
 func (s *TrackingServer) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	// クエリパラメタを取得
 	adID := r.URL.Query().Get("adID")
