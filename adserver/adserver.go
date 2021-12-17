@@ -75,7 +75,7 @@ func createVAST(userID string) []byte {
 							// Linearは動画内に挿入される動画広告
 							Linear: &vast.Linear{
 								// 動画広告の時間
-								Duration: vast.Duration(time.Second * 15),
+								Duration: vast.Duration(time.Second * 10),
 
 								// 動画広告の表示ログ発火URL
 								// start/midpoint/completeでそれぞれ発火する
